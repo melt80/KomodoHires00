@@ -83,6 +83,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContractService.cs" />
     <Compile Include="TeamService.cs" />
     <Compile Include="DeveloperService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

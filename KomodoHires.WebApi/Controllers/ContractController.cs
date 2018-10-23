@@ -1,4 +1,4 @@
-﻿using KomodoHires.Models.Team;
+﻿using KomodoHires.Models.Contract;
 using KomodoHires.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -10,50 +10,47 @@ using System.Web.Http;
 
 namespace KomodoHires.WebApi.Controllers
 {
-    public class TeamController : ApiController
+    public class ContractController : ApiController
     {
         public IHttpActionResult Get()
         {
-            TeamService teamService = CreateTeamService();
-            var teams = teamService.GetTeams();
-            return Ok(teams);
+            ContractService contractService = CreateContractService();
+            var contracts = contractService.GetContracts();
+            return Ok(contracts);
         }
 
-        private TeamService CreateTeamService()
+        private ContractService CreateContractService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var teamService = new TeamService(userId);
-            return teamService;
+            var contractService = new ContractService(userId);
+            return contractService;
         }
 
-        public IHttpActionResult Post(TeamCreate team)
+        public IHttpActionResult Post(ContractCreate contract)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            var service = CreateTeamService();
-            if (!service.CreateTeam(team))
+            var service = CreateContractService();
+            if (!service.CreateContract(contract))
                 return InternalServerError();
             return Ok();
         }
 
-        public IHttpActionResult Put(TeamEdit team)
+        public IHttpActionResult Put(ContractEdit contract)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            var service = CreateTeamService();
-            if (!service.UpdateTeam(team))
+            var service = CreateContractService();
+            if (!service.UpdateContract(contract))
                 return InternalServerError();
-            
             return Ok();
         }
 
         public IHttpActionResult Delete(int id)
         {
-            var service = CreateTeamService();
-            
-            if (!service.DeleteTeam(id))
+            var service = CreateContractService();
+            if (!service.DeleteContract(id))
                 return InternalServerError();
-            
             return Ok();
         }
     }

@@ -38,18 +38,18 @@ namespace KomodoHires.WebApi.Controllers
         public IHttpActionResult Put(DeveloperEdit developer)
         {
             if (!ModelState.IsValid)
-                return BadRequest(ModelState);​
-            var service = CreateDeveloperService();​
+                return BadRequest(ModelState);
+            var service = CreateDeveloperService();
             if (!service.UpdateDeveloper(developer))
-                return InternalServerError();​
+                return InternalServerError();
             return Ok();
         }
 
         public IHttpActionResult Delete(int id)
         {
-            var service = CreateDeveloperService();​
+            var service = CreateDeveloperService();
             if (!service.DeleteDeveloper(id))
-                return InternalServerError();​
+                return InternalServerError();
             return Ok();
         }
 

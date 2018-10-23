@@ -36,6 +36,7 @@ namespace KomodoHires.Data
 
         public DbSet<Developer> Developers { get; set; }
         public DbSet<Team> Teams { get; set; }
+        public DbSet<Contract> Contracts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -83,6 +83,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contract\ContractCreate.cs" />
+    <Compile Include="Contract\ContractDetail.cs" />
+    <Compile Include="Contract\ContractEdit.cs" />
+    <Compile Include="Contract\ContractListItem.cs" />
     <Compile Include="Developer\DeveloperCreate.cs" />
     <Compile Include="Developer\DeveloperDetail.cs" />
     <Compile Include="Developer\DeveloperEdit.cs" />
