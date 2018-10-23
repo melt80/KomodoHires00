@@ -12,11 +12,18 @@ namespace KomodoHires.WebApi.Controllers
 {
     public class ContractController : ApiController
     {
-        public IHttpActionResult Get()
+        public IHttpActionResult GetAll()
         {
             ContractService contractService = CreateContractService();
             var contracts = contractService.GetContracts();
             return Ok(contracts);
+        }
+
+        public IHttpActionResult Get(int id)
+        {
+            ContractService contractService = CreateContractService();
+            var contract = contractService.GetContractById(id);
+            return Ok(contract);
         }
 
         private ContractService CreateContractService()

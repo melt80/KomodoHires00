@@ -58,6 +58,26 @@ namespace KomodoHires.Services
             }
         }
 
+        public TeamDetail GetTeamById(int teamId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Teams
+                        .Single(e => e.TeamID == teamId && e.OwnerID == _userId);
+                return
+                    new TeamDetail
+                    {
+                        TeamID = entity.TeamID,
+                        Name = entity.Name,
+                        CreatedUtc = entity.CreatedUtc,
+                        ModifiedUtc = entity.ModifiedUtc
+                    };
+            }
+
+        }
+
         public bool UpdateTeam(TeamEdit model)
         {
             using (var ctx = new ApplicationDbContext())

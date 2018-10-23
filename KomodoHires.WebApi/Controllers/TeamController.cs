@@ -12,11 +12,18 @@ namespace KomodoHires.WebApi.Controllers
 {
     public class TeamController : ApiController
     {
-        public IHttpActionResult Get()
+        public IHttpActionResult GetAll()
         {
             TeamService teamService = CreateTeamService();
             var teams = teamService.GetTeams();
             return Ok(teams);
+        }
+
+        public IHttpActionResult Get(int id)
+        {
+            TeamService teamService = CreateTeamService();
+            var team = teamService.GetTeamById(id);
+            return Ok(team);
         }
 
         private TeamService CreateTeamService()

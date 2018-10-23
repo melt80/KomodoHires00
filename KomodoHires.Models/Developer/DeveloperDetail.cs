@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KomodoHires.Models.Team
+namespace KomodoHires.Models.Developer
 {
-    public class TeamDetail
+    public class DeveloperDetail
     {
-        public int TeamID { get; set; }
+        public int DeveloperID { get; set; }
         public string Name { get; set; }
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }

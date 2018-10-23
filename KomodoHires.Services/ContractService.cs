@@ -36,6 +36,27 @@ namespace KomodoHires.Services
 
         }
 
+        public ContractDetail GetContractById(int contractId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Contracts
+                        .Single(e => e.ContractID == contractId && e.OwnerID == _userId);
+                return
+                    new ContractDetail
+                    {
+                        ContractID = entity.ContractID,
+                        DeveloperID = entity.DeveloperID,
+                        TeamID = entity.TeamID,
+                        CreatedUtc = entity.CreatedUtc,
+                        ModifiedUtc = entity.ModifiedUtc
+                    };
+            }
+
+        }
+
         public IEnumerable<ContractListItem> GetContracts()
         {
             using (var ctx = new ApplicationDbContext())

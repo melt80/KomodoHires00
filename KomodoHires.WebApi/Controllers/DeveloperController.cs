@@ -22,7 +22,9 @@ namespace KomodoHires.WebApi.Controllers
 
         public IHttpActionResult Get(int id)
         {
-            return Ok();
+            DeveloperService developerService = CreateDeveloperService();
+            var developer = developerService.GetDeveloperById(id);
+            return Ok(developer);
         }
 
         public IHttpActionResult Post(DeveloperCreate developer)

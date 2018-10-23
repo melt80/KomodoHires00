@@ -35,6 +35,26 @@ namespace KomodoHires.Services
 
         }
 
+        public DeveloperDetail GetDeveloperById(int developerId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Developers
+                        .Single(e => e.DeveloperID == developerId && e.OwnerID == _userId);
+                return
+                    new DeveloperDetail
+                    {
+                        DeveloperID = entity.DeveloperID,
+                        Name = entity.Name,
+                        CreatedUtc = entity.CreatedUtc,
+                        ModifiedUtc = entity.ModifiedUtc
+                    };
+            }
+
+        }
+
         public IEnumerable<DeveloperListItem> GetDevelopers()
         {
             using (var ctx = new ApplicationDbContext())
