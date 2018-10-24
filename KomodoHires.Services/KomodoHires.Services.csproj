@@ -84,6 +84,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContractService.cs" />
+    <Compile Include="MockServices\MockContractService.cs" />
+    <Compile Include="MockServices\MockTeamService.cs" />
     <Compile Include="TeamService.cs" />
     <Compile Include="DeveloperService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,6 +95,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\KomodoHires.Contracts\KomodoHires.Contracts.csproj">
+      <Project>{c5666a6f-fd88-4454-b792-49655fbd827a}</Project>
+      <Name>KomodoHires.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KomodoHires.Data\KomodoHires.Data.csproj">
       <Project>{ab930885-ff59-4be5-bf2b-0a35c53a07af}</Project>
       <Name>KomodoHires.Data</Name>

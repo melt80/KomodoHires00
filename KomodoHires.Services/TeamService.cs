@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace KomodoHires.Services
 {
-    public class TeamService
+    public class TeamService : ITeamService
     {
         private readonly Guid _userId;
 

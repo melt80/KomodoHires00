@@ -83,12 +83,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="IContractService.cs" />
+    <Compile Include="ITeamService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KomodoHires.Data\KomodoHires.Data.csproj">
+      <Project>{ab930885-ff59-4be5-bf2b-0a35c53a07af}</Project>
+      <Name>KomodoHires.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KomodoHires.Models\KomodoHires.Models.csproj">
+      <Project>{208b2d8d-3f1b-4a4c-b64a-1b1c41e7289e}</Project>
+      <Name>KomodoHires.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

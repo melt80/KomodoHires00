@@ -1,4 +1,5 @@
-﻿using KomodoHires.Data;
+﻿using KomodoHires.Contracts;
+using KomodoHires.Data;
 using KomodoHires.Models.Contract;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace KomodoHires.Services
 {
-    public class ContractService
+    public class ContractService : IContractService
     {
         private readonly Guid _userId;
 

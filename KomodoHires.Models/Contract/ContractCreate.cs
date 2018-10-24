@@ -9,6 +9,8 @@ namespace KomodoHires.Models.Contract
 {
     public class ContractCreate
     {
+        [Key]
+        public int ContractID { get; set; }
         [Required]
         public int DeveloperID { get; set; }
         [Required]
